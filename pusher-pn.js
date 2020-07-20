@@ -25,53 +25,59 @@ app.get('/pusher/beams-auth', function(req, res) {
   }
 });
 
-app.get('/pusher/interest', function(req, res) {
+app.get('/pusher/interest', async function(req, res) {
   const interest = req.query['interest'];
 
   const channel = interest ? interest : 'general';
-  beamsClient.publishToInterests([channel], {
-    apns: {
-      aps: {
-        alert: {
-          "title": "iOS: Device Interest",
+  try {
+
+    const result = await beamsClient.publishToInterests([channel], {
+      apns: {
+        aps: {
+          alert: {
+            "title": "iOS: Device Interest",
+            "body": `Channel: ${channel}`
+          }
+        }
+      },
+      fcm: {
+        "notification": {
+          "title": "Android: Device Interest",
           "body": `Channel: ${channel}`
+        },
+        "data": {
+          "inAppNotificationMessage": "Display me somewhere in the app ui!",
+          "actions": [
+            {
+              "icon": "emailGuests",
+              "title": "EMAIL GUESTS",
+              "callback": "emailGuests",
+              "foreground": true
+            },
+            {
+              "icon": "snooze",
+              "title": "SNOOZE",
+              "callback": "snooze",
+              "foreground": false
+            }
+          ]
+        }
+      },
+      web: {
+        notification: {
+          title: 'Hello',
+          body: 'Hello, world for the web!'
         }
       }
-    },
-    fcm: {
-      "notification": {
-        "title": "Android: Device Interest",
-        "body": `Channel: ${channel}`
-      },
-      "data": {
-        "inAppNotificationMessage": "Display me somewhere in the app ui!",
-        "actions": [
-          {
-            "icon": "emailGuests",
-            "title": "EMAIL GUESTS",
-            "callback": "emailGuests",
-            "foreground": true
-          },
-          {
-            "icon": "snooze",
-            "title": "SNOOZE",
-            "callback": "snooze",
-            "foreground": false
-          }
-        ]
-      }
-    },
-    web: {
-      notification: {
-        title: 'Hello',
-        body: 'Hello, world for the web!'
-      }
-    }
-  }).then((publishResponse) => {
-    console.log('Just published:', publishResponse.publishId);
-  }).catch((error) => {
-    console.error('Error:', error);
-  });
+    });
+    console.log('Just published:', result.publishId);
+    res.json(result);
+  } catch(e) {
+    res.json({
+      error: JSON.stringify(e)
+    });
+    console.error('Error:', e);
+  }
 });
 
 app.get('/pusher/user', function(req, res) {
