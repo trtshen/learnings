@@ -4,3 +4,4 @@ node_modules/
 .gitsecret/keys/random_seed
 !*.secret
 sensitive-file
+another-sensitive-file
