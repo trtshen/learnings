@@ -103,6 +103,7 @@ app.get('/pusher/user', function(req, res) {
     }
   }).then((publishResponse) => {
     console.log('Just published:', publishResponse.publishId);
+    res.json(publishResponse);
   }).catch((error) => {
     console.error('Error:', error);
   });
