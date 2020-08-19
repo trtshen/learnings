@@ -1,3 +1,6 @@
 .DS_Store
 config/index.js
 node_modules/
+.gitsecret/keys/random_seed
+!*.secret
+sensitive-file
