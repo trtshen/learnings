@@ -6,7 +6,7 @@ Link: https://git-secret.io
 
 - git-secret: install through homebrew (Mac)
 
-#### Steps
+#### Steps (to start using git-secret)
 
 1. To start using *git-secret*, to initialize "git-secret"
 	```bash
@@ -31,3 +31,18 @@ Link: https://git-secret.io
 	```bash
 	git secret hide
 	```
+
+#### Steps (adding new user to git-secret keyring)
+
+1. Get public key exported from other user, they'll need to run this command in his machine
+	```bash
+	#assuming he/she has gpg key added earlier
+	gpg --export your.email@address.com --armor > their-public-key.gpg
+	```
+
+1. Download and import their key (Purpose: sharing secret with them, so they can see files encrypted under your key)
+	```bash
+	gpg --import their-public-key.gpg
+	```
+
+1. Commit `.gitsecret` changes, then everyone start coding
