@@ -1,2 +1,5 @@
 config/index.js
 node_modules/
+.gitsecret/
+another-sensitive-file
+sensitive-file

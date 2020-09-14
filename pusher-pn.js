@@ -1,15 +1,10 @@
 const express = require('express');
-const PushNotifications = require('@pusher/push-notifications-server');
 const debug = require('debug');
 
-const config = require('./config');
+const beamsClient = require('./beams');
 
 const port = 8080;
 const app = express();
-const beamsClient = new PushNotifications({
-  instanceId: config.instanceId,
-  secretKey: config.secretKey,
-});
 
 app.get('/pusher/beams-auth', function(req, res) {
   // Do your normal auth checks here 🔒
@@ -80,33 +75,52 @@ app.get('/pusher/interest', async function(req, res) {
   }
 });
 
-app.get('/pusher/user', function(req, res) {
-  const user = req.query['user_id'];
+app.get('/pusher/delete', async function (req, res) {
+  const userId = req.query['user_id'] || 'anykindofid';
+  debug(`userId:: ${userId}`);
+  if (userId === null || typeof userId !== 'number') {
+    debug('no id provided');
+    return;
+  }
 
-  beamsClient.publishToUsers([user ? user : 'chaw'], {
-    apns: {
-      aps: {
-        alert: 'Hello!'
+  try {
+    const deleted = await beamsClient.delete(userId);
+    return res.status(200).json(deleted);
+  } catch (err) {
+    debug(err);
+  }
+});
+
+app.get('/pusher/user', async function(req, res) {
+  const user = req.query['user_id'] || 'chaw';
+
+  try {
+    const result = await beamsClient.publishToUsers([user], {
+      apns: {
+        aps: {
+          alert: 'Hello!'
+        }
+      },
+      fcm: {
+        notification: {
+          title: 'Hello',
+          body: `Hello, ${user}!`
+        }
+      },
+      web: {
+        notification: {
+          title: 'Hello',
+          body: `Hello, ${user}!`
+        }
       }
-    },
-    fcm: {
-      notification: {
-        title: 'Hello',
-        body: 'Hello, Chaw!'
-      }
-    },
-    web: {
-      notification: {
-        title: 'Hello',
-        body: 'Hello, Chaw!'
-      }
-    }
-  }).then((publishResponse) => {
-    console.log('Just published:', publishResponse.publishId);
-    res.json(publishResponse);
-  }).catch((error) => {
+    });
+    return res.status(200).send({
+      message: 'Just published:: ' + result.publishId,
+      raw: result
+    });
+  } catch(error) {
     console.error('Error:', error);
-  });
+  }
 })
 
 app.listen(port, () => console.log(`Listening on port ${port}...`));

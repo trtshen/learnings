@@ -4,6 +4,7 @@
   "description": "",
   "main": "pusher-pn.js",
   "scripts": {
+    "start": "node pusher-pn.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
