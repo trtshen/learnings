@@ -37,7 +37,7 @@ Link: https://git-secret.io
 1. Get public key exported from other user, they'll need to run this command in his machine
 	```bash
 	#assuming he/she has gpg key added earlier
-	gpg --export your.email@address.com --armor > their-public-key.gpg
+	gpg --export their.email@address.com --armor > their-public-key.gpg
 	```
 
 1. Download and import their key (Purpose: sharing secret with them, so they can see files encrypted under your key)
