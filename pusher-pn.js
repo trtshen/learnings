@@ -23,10 +23,19 @@ app.get('/pusher/beams-auth', function(req, res) {
 app.get('/pusher/interest', async function(req, res) {
   const interest = req.query['interest'];
 
-  const channel = interest ? interest : 'general';
+  let channel = interest ? [interest] : ['general'];
+
+  if (interest === 'all') {
+    let interests = [];
+    for (var i = 0; i < 100; ++i) {
+      interests.push(`name-${i}`);
+    }
+    channel = interests;
+  }
+
   try {
 
-    const result = await beamsClient.publishToInterests([channel], {
+    const result = await beamsClient.publishToInterests(channel, {
       apns: {
         aps: {
           alert: {
