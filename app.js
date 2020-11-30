@@ -8,7 +8,14 @@ fetch('https://4d052q3ph6.execute-api.ap-southeast-2.amazonaws.com/notify', {
   body: JSON.stringify({})
 })
 .then(response => response.json())
-.then(data => console.log(data))
+.then(data => {
+  const result = document.getElementById('result');
+  const childElement = document.createElement("p");
+  const preEle = document.createElement("pre");
+
+  result.appendChild(childElement.appendChild(document.createTextNode(JSON.stringify(data))));
+  console.log(data);
+})
 .catch(err => {
   const result = document.getElementById('result');
   const childElement = document.createElement("p");
