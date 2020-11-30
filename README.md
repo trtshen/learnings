@@ -6,7 +6,7 @@ Link: https://git-secret.io
 
 - git-secret: install through homebrew (Mac)
 
-#### Steps (to start using git-secret)
+#### Steps (to setup git-secret in your project)
 
 1. To start using *git-secret*, to initialize "git-secret"
 	```bash
@@ -30,6 +30,27 @@ Link: https://git-secret.io
 1. Once added file(s) are ready to be pushed to Github, do
 	```bash
 	git secret hide
+	```
+
+#### Steps (to use git-secret as team member)
+1. Reveal encrypted file(s): Password is required
+	```bash
+	git secret reveal
+	```
+
+1. Encrypt tracked file(s) before commit
+	```bash
+	git secret hide
+	```
+
+1. Find the list of encrypted file(s)
+	```bash
+	git secret list
+	```
+
+1. Find who has access to the encrypted file(s)
+	```bash
+	git secret whoknows
 	```
 
 #### Steps (adding new user to git-secret keyring)
