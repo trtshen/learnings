@@ -1,4 +1,10 @@
-### Learnings
+### Learnings - Test frameworks
+
+Getting started
+
+```sh
+npm start
+```
 
 Collections of any learning materials
 
