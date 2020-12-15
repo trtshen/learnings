@@ -1,0 +1,12 @@
+{
+  "all": true,
+  "reporter": "text",
+  "report-dir": "./coverage",
+  "extension": [".ts"],
+  "exclude": [
+    "app/model/vo/**.ts",
+    "coverage",
+    "tests",
+    "src"
+  ]
+}
