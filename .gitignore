@@ -4,3 +4,4 @@ node_modules/
 sensitive-file
 another-sensitive-file
 .gitsecret/keys/random_seed
+.env
