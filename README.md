@@ -12,6 +12,11 @@ Collections of learning materials
 
 1. For local env development, get yourself an Beams instance id from: https://dashboard.pusher.com/beams/instances/
 1. Replace `YOUR_PUSHER_BEAMS_INSTANCE_ID` with your instance key.
+1. Run
+  ```
+    npm install
+    npm start
+  ```
 1. Command to test if your setup works:
   ```bash
   curl -H "Content-Type: application/json" \
