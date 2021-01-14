@@ -19,3 +19,5 @@ Collections of learning materials
      -X POST "https://YOUR_PUSHER_BEAMS_INSTANCE_ID.pushnotifications.pusher.com/publish_api/v1/instances/YOUR_PUSHER_BEAMS_INSTANCE_ID/publishes" \
      -d '{"interests":["hello"],"web":{"notification":{"title":"Hello","body":"Hello, world!"}}}'
   ```
+
+Notes: all the steps above are available on Pusher Beams's instance overview page.
