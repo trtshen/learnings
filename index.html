@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Beams Client Web Implementation Template</title>
 </head>
 <body>
-  <header>
-    <h1>Web Push Notifications Demo</h1>
-  </header>
-
-  <div class="buttons">
-    <button class="trigger-push">Trigger Push Notification</button>
+  <div>
+    <h2>Success</h2>
+    <p id="success">none</p>
   </div>
+  <div>
+    <h2>Fail</h2>
+    <p id="fail">none</p>
+  </div>
+	<script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
+	<script>
+	  const beamsClient = new PusherPushNotifications.Client({
+	    instanceId: 'YOUR_PUSHER_BEAMS_INSTANCE_ID',
+	  });
 
-  <script src="main.js">
-</script>
-
+	  beamsClient.start()
+	    .then(() => beamsClient.addDeviceInterest('hello'))
+	    .then(() => {
+        const msg = 'Successfully registered and subscribed to Pusher Beams!';
+        console.log(msg);
+        const success = document.getElementById('success');
+        success.textContent = msg;
+      })
+	    .catch(err => {
+        const fail = document.getElementById('fail');
+        fail.textContent = err;
+        console.error(err);
+      });
+	</script>
 </body>
 </html>
