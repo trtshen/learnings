@@ -4,9 +4,11 @@
   "description": "Learning Pusher Beams implementation on web client",
   "main": "index.html",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  },
   "scripts": {
-    "start": "http-server -p 3000 -o",
+    "start": "./node_modules/.bin/http-server -p 3000 -o",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
