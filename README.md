@@ -26,3 +26,6 @@ Collections of learning materials
   ```
 
 Notes: all the steps above are available on Pusher Beams's instance overview page.
+
+
+![Sample Result](https://github.com/trtshen/learnings/blob/pusher-client-web/imgs/pusherBeamsPushNotification.png?raw=true)
