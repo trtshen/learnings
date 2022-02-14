@@ -7,26 +7,37 @@ import { DefaultpanePage } from './pages/defaultpane';
 
 import { SplitpanesPage } from './splitpanes';
 
+const defaultPage = {
+  path: '',
+  component: DefaultpanePage,
+};
+
 const routes: Routes = [
   {
     path: '',
     component: SplitpanesPage,
     children: [
-      {
-        path: '',
-        component: DefaultpanePage,
-      },
+      defaultPage,
       {
         path: 'a',
         component: ASplitpanePage,
-      },
-      {
-        path: 'b',
-        component: BSplitpanePage,
-      },
-      {
-        path: 'c',
-        component: CSplitpanePage,
+        children: [
+          defaultPage,
+          {
+            path: 'b',
+            component: BSplitpanePage,
+            children: [
+              defaultPage,
+              {
+                path: 'c',
+                component: CSplitpanePage,
+                children: [
+                  defaultPage
+                ]
+              },
+            ]
+          },
+        ]
       },
       {
         path: '**',
