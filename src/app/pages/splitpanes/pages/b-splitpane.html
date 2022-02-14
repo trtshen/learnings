@@ -1,0 +1,29 @@
+<ion-content>
+  <ion-split-pane contentId="mainC">
+  <ion-content>
+    <ion-list lines="none">
+      <ion-list-header>
+        B
+      </ion-list-header>
+    </ion-list>
+
+    <ion-list lines="none">
+      <ion-list-header>
+        C
+      </ion-list-header>
+
+      <ion-menu-toggle autoHide="false">
+        <ion-item routerLink="/app/tabs/splitpanes/c" routerLinkActive="active" routerDirection="root" detail="false">
+          <ion-icon slot="start" name="person"></ion-icon>
+          <ion-label>
+            Page C
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+    </ion-list>
+  </ion-content>
+
+    <ion-router-outlet id="mainC"></ion-router-outlet>
+  </ion-split-pane>
+</ion-content>

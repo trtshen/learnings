@@ -12,12 +12,14 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
+import { TestingModule } from './pages/testing/testing.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    TestingModule,
     FormsModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),

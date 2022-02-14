@@ -58,6 +58,24 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'testing',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../testing/testing.module').then(m => m.TestingModule)
+          }
+        ]
+      },
+      {
+        path: 'splitpanes',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../splitpanes/splitpanes.module').then(m => m.SplitpanesModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/app/tabs/schedule',
         pathMatch: 'full'

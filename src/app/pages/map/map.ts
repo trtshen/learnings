@@ -27,7 +27,7 @@ export class MapPage implements AfterViewInit {
     }
 
     const googleMaps = await getGoogleMaps(
-      'YOUR_API_KEY_HERE'
+      'AIzaSyA-KnbDuoPVPxlJ6I9XAy4qVXzK2NlTWOQ'
     );
 
     let map;

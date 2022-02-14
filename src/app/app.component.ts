@@ -38,10 +38,22 @@ export class AppComponent implements OnInit {
       title: 'About',
       url: '/app/tabs/about',
       icon: 'information-circle'
+    },
+    {
+      title: 'Testing',
+      url: '/app/tabs/testing',
+      icon: 'beaker'
+    },
+    {
+      title: 'Double split-pane',
+      url: '/app/tabs/splitpanes',
+      icon: 'color-filter'
     }
   ];
   loggedIn = false;
   dark = false;
+  brown = false;
+  insta = false;
 
   constructor(
     private menu: MenuController,

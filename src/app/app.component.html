@@ -1,4 +1,4 @@
-<ion-app [class.dark-theme]="dark">
+<ion-app [class]="{'dark-theme': dark, 'brown-theme': brown, 'insta-theme': insta }">
   <ion-split-pane contentId="main-content">
 
     <ion-menu contentId="main-content">
@@ -90,6 +90,22 @@
               Dark Mode
             </ion-label>
             <ion-toggle [(ngModel)]="dark"></ion-toggle>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon slot="start" name="moon-outline"></ion-icon>
+            <ion-label>
+              Brown Mode
+            </ion-label>
+            <ion-toggle [(ngModel)]="brown"></ion-toggle>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon slot="start" name="moon-outline"></ion-icon>
+            <ion-label>
+              Instagram Mode
+            </ion-label>
+            <ion-toggle [(ngModel)]="insta"></ion-toggle>
           </ion-item>
         </ion-list>
 
