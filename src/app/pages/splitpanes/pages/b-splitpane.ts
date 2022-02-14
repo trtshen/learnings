@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class BSplitpanePage {
   constructor() { }
-
-  public theme(color: string) {
-    console.log(color);
-  }
 }

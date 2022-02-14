@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ASplitpanePage } from './pages/a-splitpane';
 import { BSplitpanePage } from './pages/b-splitpane';
+import { CSplitpanePage } from './pages/c-splitpane';
+import { DefaultpanePage } from './pages/defaultpane';
 
 import { SplitpanesPage } from './splitpanes';
 
@@ -11,6 +13,10 @@ const routes: Routes = [
     component: SplitpanesPage,
     children: [
       {
+        path: '',
+        component: DefaultpanePage,
+      },
+      {
         path: 'a',
         component: ASplitpanePage,
       },
@@ -18,6 +24,14 @@ const routes: Routes = [
         path: 'b',
         component: BSplitpanePage,
       },
+      {
+        path: 'c',
+        component: CSplitpanePage,
+      },
+      {
+        path: '**',
+        component: DefaultpanePage
+      }
     ]
   }
 ];

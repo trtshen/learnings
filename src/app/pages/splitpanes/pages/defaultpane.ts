@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'defaultpane',
+  selector: 'defaultpane.html',
   templateUrl: './defaultpane.html',
   styleUrls: ['./defaultpane.scss'],
 })

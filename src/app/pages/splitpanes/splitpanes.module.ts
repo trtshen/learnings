@@ -7,6 +7,8 @@ import { SplitpanesPage } from './splitpanes';
 import { SplitpanesPageRoutingModule } from './splitpanes-routing.module';
 import { ASplitpanePage } from './pages/a-splitpane';
 import { BSplitpanePage } from './pages/b-splitpane';
+import { DefaultpanePage } from './pages/defaultpane';
+import { CSplitpanePage } from './pages/c-splitpane';
 
 @NgModule({
   imports: [
@@ -15,7 +17,7 @@ import { BSplitpanePage } from './pages/b-splitpane';
     IonicModule,
     SplitpanesPageRoutingModule
   ],
-  declarations: [SplitpanesPage, ASplitpanePage, BSplitpanePage],
+  declarations: [SplitpanesPage, ASplitpanePage, BSplitpanePage, CSplitpanePage, DefaultpanePage],
   bootstrap: [SplitpanesPage],
 })
 export class SplitpanesModule {}

@@ -29,6 +29,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/tabs-page/tabs-page.module').then(m => m.TabsModule)
   },
   {
+    path: 'splitpanes',
+    loadChildren: () => import('./pages/splitpanes/splitpanes.module').then(m => m.SplitpanesModule)
+  },
+  {
     path: 'tutorial',
     loadChildren: () => import('./pages/tutorial/tutorial.module').then(m => m.TutorialModule),
     canLoad: [CheckTutorial]
