@@ -16,30 +16,28 @@
   </ion-header>
 
   <ion-split-pane contentId="mainRoot">
-    <ion-menu contentId="mainRoot">
-      <ion-content>
-        <ion-list lines="none">
-          <ion-list-header>
-            Split-pane demo
-          </ion-list-header>
-        </ion-list>
+    <ion-content>
+      <ion-list lines="none">
+        <ion-list-header>
+          Split-pane demo
+        </ion-list-header>
+      </ion-list>
 
-        <ion-list lines="none">
-          <ion-list-header>
-            A
-          </ion-list-header>
+      <ion-list lines="none">
+        <ion-list-header>
+          A
+        </ion-list-header>
 
-          <ion-menu-toggle autoHide="false">
-            <ion-item routerLink="/app/tabs/splitpanes/a" routerLinkActive="active" detail="false">
-              <ion-icon slot="start" name="person"></ion-icon>
-              <ion-label>
-                Start here!
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-        </ion-list>
-      </ion-content>
-    </ion-menu>
+        <ion-menu-toggle autoHide="false">
+          <ion-item routerLink="/app/tabs/splitpanes/a" routerLinkActive="active" detail="false">
+            <ion-icon slot="start" name="person"></ion-icon>
+            <ion-label>
+              Start here!
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
 
     <ion-router-outlet id="mainRoot"></ion-router-outlet>
   </ion-split-pane>

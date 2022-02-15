@@ -7,29 +7,29 @@
   </ion-header>
 
   <ion-split-pane contentId="mainB">
-      <ion-content>
-        <ion-list lines="none">
-          <ion-list-header>
-            A
-          </ion-list-header>
-        </ion-list>
+    <ion-content>
+      <ion-list lines="none">
+        <ion-list-header>
+          A
+        </ion-list-header>
+      </ion-list>
 
-        <ion-list lines="none">
-          <ion-list-header>
-            B
-          </ion-list-header>
+      <ion-list lines="none">
+        <ion-list-header>
+          B
+        </ion-list-header>
 
-          <ion-menu-toggle autoHide="false">
-            <ion-item routerLink="/app/tabs/splitpanes/a/b/c" routerLinkActive="active" routerDirection="root" detail="false">
-              <ion-icon slot="start" name="person"></ion-icon>
-              <ion-label>
-                Page C
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
+        <ion-menu-toggle autoHide="false">
+          <ion-item routerLink="/app/tabs/splitpanes/a/b/c" routerLinkActive="active" routerDirection="root" detail="false">
+            <ion-icon slot="start" name="person"></ion-icon>
+            <ion-label>
+              Page C
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
 
-        </ion-list>
-      </ion-content>
+      </ion-list>
+    </ion-content>
 
     <ion-router-outlet id="mainB"></ion-router-outlet>
   </ion-split-pane>

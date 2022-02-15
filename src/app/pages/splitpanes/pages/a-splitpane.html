@@ -15,27 +15,16 @@
   </ion-header>
 
   <ion-split-pane contentId="mainA">
-    <ion-menu contentId="mainA">
-      <ion-content>
-        <ion-list lines="none">
-          <ion-list-header>
-            A
-          </ion-list-header>
-        </ion-list>
-
-        <ion-list lines="none">
-          <ion-menu-toggle autoHide="false">
-            <ion-item routerLink="/app/tabs/splitpanes/a/b" routerLinkActive="active" routerDirection="root" detail="false">
-              <ion-icon slot="start" name="person"></ion-icon>
-              <ion-label>
-                Page B
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-        </ion-list>
-      </ion-content>
-    </ion-menu>
+    <ion-content>
+      <ion-list lines="none">
+          <ion-item routerLink="/app/tabs/splitpanes/a/b" routerLinkActive="active" routerDirection="root" detail="false">
+            <ion-icon slot="start" name="person"></ion-icon>
+            <ion-label>
+              Page B
+            </ion-label>
+          </ion-item>
+      </ion-list>
+    </ion-content>
     <ion-router-outlet id="mainA"></ion-router-outlet>
   </ion-split-pane>
-  asdads
 </ion-content>
