@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
       icon: 'beaker'
     },
     {
-      title: 'Double split-pane',
+      title: 'Multi split-pane',
       url: '/app/tabs/splitpanes',
       icon: 'color-filter'
     }

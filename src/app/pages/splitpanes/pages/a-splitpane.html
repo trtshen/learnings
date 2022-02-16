@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-header>
+  <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">A Splitpane</ion-title>
     </ion-toolbar>
@@ -17,12 +17,18 @@
   <ion-split-pane contentId="mainA">
     <ion-content>
       <ion-list lines="none">
-          <ion-item routerLink="/app/tabs/splitpanes/a/b" routerLinkActive="active" routerDirection="root" detail="false">
-            <ion-icon slot="start" name="person"></ion-icon>
-            <ion-label>
-              Page B
-            </ion-label>
-          </ion-item>
+        <ion-list-header>
+          A
+        </ion-list-header>
+      </ion-list>
+
+      <ion-list lines="none">
+        <ion-item routerLink="/app/tabs/splitpanes/a/b" routerLinkActive="active" routerDirection="root" detail="false">
+          <ion-icon slot="start" name="person"></ion-icon>
+          <ion-label>
+            Page B
+          </ion-label>
+        </ion-item>
       </ion-list>
     </ion-content>
     <ion-router-outlet id="mainA"></ion-router-outlet>

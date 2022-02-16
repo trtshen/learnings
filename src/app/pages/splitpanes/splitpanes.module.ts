@@ -13,11 +13,17 @@ import { CSplitpanePage } from './pages/c-splitpane';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     IonicModule,
     SplitpanesPageRoutingModule
   ],
-  declarations: [SplitpanesPage, ASplitpanePage, BSplitpanePage, CSplitpanePage, DefaultpanePage],
+  declarations: [
+    SplitpanesPage,
+    ASplitpanePage,
+    BSplitpanePage,
+    CSplitpanePage,
+    DefaultpanePage,
+  ],
   bootstrap: [SplitpanesPage],
+
 })
 export class SplitpanesModule {}
