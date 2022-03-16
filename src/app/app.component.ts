@@ -18,6 +18,8 @@ import { UserData } from './providers/user-data';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
+  openMenu = true; // collapsible menu checker
+
   appPages = [
     {
       title: 'Schedule',
@@ -72,6 +74,10 @@ export class AppComponent implements OnInit {
     private toastCtrl: ToastController,
   ) {
     this.initializeApp();
+  }
+
+  get isDesktop() {
+    return this.platform.is('desktop');
   }
 
   async ngOnInit() {

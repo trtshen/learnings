@@ -1,8 +1,14 @@
 <ion-app [class]="{'dark-theme': dark, 'brown-theme': brown, 'insta-theme': insta }">
   <ion-split-pane contentId="main-content">
 
-    <ion-menu contentId="main-content">
+    <ion-menu contentId="main-content" [ngClass]="{'collapsed': !openMenu}">
       <ion-content>
+        <ng-container *ngIf="isDesktop">
+          <ion-item detail="false">
+            <ion-button (click)="openMenu = !openMenu">open/close</ion-button>
+          </ion-item>
+        </ng-container>
+
         <ion-list lines="none">
           <ion-list-header>
             Conference
