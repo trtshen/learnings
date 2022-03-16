@@ -67,6 +67,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'activity-sample',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../activity-sample/activity-sample.module').then(m => m.ActivitySampleModule)
+          }
+        ]
+      },
+      {
         path: 'splitpanes',
         children: [
           {

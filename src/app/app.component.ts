@@ -45,6 +45,11 @@ export class AppComponent implements OnInit {
       icon: 'beaker'
     },
     {
+      title: 'Activity Sample',
+      url: '/app/tabs/activity-sample',
+      icon: 'shirt'
+    },
+    {
       title: 'Multi split-pane',
       url: '/app/tabs/splitpanes',
       icon: 'color-filter'

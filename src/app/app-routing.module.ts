@@ -29,6 +29,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/tabs-page/tabs-page.module').then(m => m.TabsModule)
   },
   {
+    path: 'activity-sample',
+    loadChildren: () => import('./pages/activity-sample/activity-sample.module').then(m => m.ActivitySampleModule)
+  },
+  {
     path: 'splitpanes',
     loadChildren: () => import('./pages/splitpanes/splitpanes.module').then(m => m.SplitpanesModule)
   },

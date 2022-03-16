@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Activity (handled with grid)</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Activity</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="border-right" size="12" size-lg>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-list *ngIf="platform.is('mobile')">
+                <ion-item  routerDirection="root" routerLink="/app/tabs/activity-sample/detail-mobile">
+                  <ion-button>Go other page</ion-button>
+                </ion-item>
+              </ion-list>
+              <div class="a">
+                <section style="padding: 1em;">
+                  <h1>Ok amount of content</h1>
+                  <p>Dignissim pellentesque eu libero vitae erat parturient, interdum a lacinia laoreet taciti imperdiet malesuada, amet</p>
+                  <p>cursus posuere justo egestas. Nulla vehicula potenti vel mattis ad ridiculus, orci velit amet quisque quis, maecenas</p>
+                  <p>tempor commodo molestie pretium. Viverra nullam lobortis egestas curae elementum himenaeos est faucibus, quam vulputate</p>
+                  <p>litora scelerisque lectus dictumst euismod, tristique potenti convallis malesuada mus diam mi. Turpis magna vehicula</p>
+                  <p>neque pellentesque in tempor mi risus justo lectus mattis, orci himenaeos molestie interdum pretium dapibus integer</p>
+                  <p>litora duis bibendum, commodo netus dictumst adipiscing malesuada imperdiet vestibulum gravida donec proin. Amet</p>
+                  <p>adipiscing orci aliquet sapien odio nisi id placerat, lacinia sit auctor dictum rhoncus litora est, tempor semper at
+                  curabitur vestibulum donec tellus.</p>
+                </section>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+
+      <ion-col size="12" size-lg>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <page-activity-detail></page-activity-detail>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
